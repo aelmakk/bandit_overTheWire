@@ -1,0 +1,39 @@
+bandit0:
+    * connect using ssh
+    - ssh bandit0@bandit.labs.overthewire.org -p 2220
+    - password: bandit0
+    - cat readme ==> NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+
+bandit1:
+    * connect using ssh
+    - ssh bandit1@bandit.labs.overthewire.org -p 2220
+    - passord: NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+    - cat ./- ==> rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+
+bandit2:
+    * connect using ssh
+    - ssh bandit2@bandit.labs.overthewire.org -p 2220
+    - password: rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+    - cat spaces\ in\ this\ filename ==> aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+
+bandit3:
+    * connect using ssh
+    - ssh bandit3@bandit.labs.overthewire.org -p 2220
+    - password: aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+    - cat inhere/.hidden ==> 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+
+bandit4:
+    * connect using ssh
+    - ssh bandit4@bandit.labs.overthewire.org -p 2220
+    - password: 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+    - find . -type f | xargs file | grep text
+    - output: ./-file07: ASCII text
+    - cat < -file07 ==> lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+
+bandit5:
+    * connect using ssh
+    - ssh bandit5@bandit.labs.overthewire.org -p 2220
+    - password: lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+    - find ./  -type f -size 1033c ! -perm -u+x | xargs file | grep text
+    - output: ./inhere/maybehere07/.file2
+    - cat < ./inhere/maybehere07/.file2 ==> P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
